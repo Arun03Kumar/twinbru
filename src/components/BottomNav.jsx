@@ -9,7 +9,11 @@ const BottomNav = () => {
         <div className="colorCir" style={{ backgroundColor: "#c6e38b" }}></div>
         <div className="colorCir" style={{ backgroundColor: "#fde391" }}></div>
       </div>
-      <div className="cir rightBottomNav"></div>
+      <div className="cir rightBottomNav">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };

@@ -13,7 +13,7 @@ svg {
   color: white;
 }
 
-nav{
+nav {
   font-family: "Flama";
   display: flex;
   width: 100vw;
@@ -26,12 +26,12 @@ nav{
   padding: 45px 60px;
 }
 
-.leftNav{
+.leftNav {
   display: flex;
   align-items: center;
 }
 
-.leftNav > p {
+.leftNav>p {
   margin-left: 5px;
   font-size: 25px;
   font-weight: 600;
@@ -46,18 +46,20 @@ nav{
   align-items: center;
   justify-content: center;
 }
-.innerC{
+
+.innerC {
   width: 25px;
   height: 25px;
   border: 5px solid #C29A94;
   border-radius: 50%;
 }
 
-.centerNav{
+.centerNav {
   display: flex;
   gap: 60px;
 }
-.bottomNav{
+
+.bottomNav {
   display: flex;
   justify-content: space-between;
   background: transparent;
@@ -66,7 +68,8 @@ nav{
   bottom: 40px;
   margin-left: 60px;
 }
-.cir{
+
+.cir {
   height: 50px;
   background-color: #C8A49F;
   display: flex;
@@ -75,7 +78,8 @@ nav{
   /* backdrop-filter: blur(1px); */
   border: 1px solid rgba(255, 255, 255, 0.402);
 }
-.leftBottomNav{
+
+.leftBottomNav {
   width: 160px;
   border-radius: 30px;
   display: flex;
@@ -83,15 +87,60 @@ nav{
   padding-left: 10px;
   padding-right: 10px;
 }
-.rightBottomNav{
+
+.rightBottomNav {
   border-radius: 50%;
   width: 50px;
 }
 
-.colorCir{
+.rightBottomNav>div {
+  width: 3px;
+  height: 3px;
+  background-color: white;
+}
+
+
+.rightBottomNav>div:not(:nth-child(3)) {
+  margin-right: 4px;
+}
+
+
+.colorCir {
   width: 25px;
   height: 25px;
   border: 3px solid white;
   border-radius: 50%;
   /* margin-right: 5px; */
+}
+
+.heroText {
+  position: absolute;
+  left: 12%;
+  top: 31%;
+}
+
+.lText{
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.descHero{
+  width: 55%;
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+.linkHero{
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.linkHero > i {
+  margin-left: 10px;
+  margin-top: 4px;
+  font-weight: normal;
 }

@@ -8,6 +8,7 @@ import SphereComp from "./components/SphereComp";
 import Logo from "/blue.svg";
 import Nav from "./components/Nav";
 import BottomNav from "./components/BottomNav";
+import HeroText from "./components/HeroText";
 
 function App() {
   const [lastFrameTime, setLastFrameTime] = useState(0);
@@ -92,6 +93,7 @@ function App() {
       ></canvas>
       <Nav />
       <BottomNav />
+      <HeroText />
     </div>
   );
 }
