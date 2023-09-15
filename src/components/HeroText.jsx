@@ -1,10 +1,23 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import "remixicon/fonts/remixicon.css";
 
 const HeroText = () => {
   const arrowRef = useRef(null);
+  const barRef = useRef(null);
+
+  useEffect(() => {
+    if (barRef.current) {
+      gsap.to(barRef.current, {
+        y: -10,
+        duration: 1,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
+    }
+  }, []);
 
   const handleHover = () => {
     gsap.to(arrowRef.current, {
@@ -38,7 +51,7 @@ const HeroText = () => {
         <i ref={arrowRef} class="ri-arrow-right-line"></i>
       </div>
       <div className="scrollBar">
-        <div className="bar"></div>
+        <div ref={barRef} className="bar"></div>
       </div>
     </div>
   );
