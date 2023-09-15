@@ -1,0 +1,97 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+#circleAnimation {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+}
+
+svg {
+  color: white;
+}
+
+nav{
+  font-family: "Flama";
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 45px 60px;
+}
+
+.leftNav{
+  display: flex;
+  align-items: center;
+}
+
+.leftNav > p {
+  margin-left: 5px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innerC{
+  width: 25px;
+  height: 25px;
+  border: 5px solid #C29A94;
+  border-radius: 50%;
+}
+
+.centerNav{
+  display: flex;
+  gap: 60px;
+}
+.bottomNav{
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  position: fixed;
+  width: 92vw;
+  bottom: 40px;
+  margin-left: 60px;
+}
+.cir{
+  height: 50px;
+  background-color: #C8A49F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* backdrop-filter: blur(1px); */
+  border: 1px solid rgba(255, 255, 255, 0.402);
+}
+.leftBottomNav{
+  width: 160px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.rightBottomNav{
+  border-radius: 50%;
+  width: 50px;
+}
+
+.colorCir{
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+  border-radius: 50%;
+  /* margin-right: 5px; */
+}
