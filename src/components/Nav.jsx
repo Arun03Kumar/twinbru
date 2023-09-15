@@ -10,6 +10,7 @@ const Nav = () => {
     "News",
     "Contact",
   ];
+
   return (
     <nav>
       <div className="leftNav">

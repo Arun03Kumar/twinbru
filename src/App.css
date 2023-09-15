@@ -137,6 +137,7 @@ nav {
   margin-top: 50px;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .linkHero>i {
