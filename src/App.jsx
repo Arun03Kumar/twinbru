@@ -9,6 +9,7 @@ import Logo from "/blue.svg";
 import Nav from "./components/Nav";
 import BottomNav from "./components/BottomNav";
 import HeroText from "./components/HeroText";
+import PartnerSection from "./components/PartnerSection/PartnerSection";
 
 function App() {
   const [lastFrameTime, setLastFrameTime] = useState(0);
@@ -73,17 +74,19 @@ function App() {
   }, []);
   return (
     <div className="main">
-      <Canvas
-        // shadowMap
-        camera={{
-          position: [0, 0, 300],
-          fov: 35,
-          near: 0.1,
-          far: 1000,
-        }}
-      >
-        <SphereComp />
-      </Canvas>
+      <div style={{ width: "100vw", height: "130vh" }}>
+        <Canvas
+          // shadowMap
+          camera={{
+            position: [0, 0, 300],
+            fov: 35,
+            near: 0.1,
+            far: 1000,
+          }}
+        >
+          <SphereComp />
+        </Canvas>
+      </div>
       <canvas
         ref={circleCanvasRef}
         id="circleAnimation"
@@ -93,6 +96,7 @@ function App() {
       <Nav />
       <BottomNav />
       <HeroText />
+      <PartnerSection />
     </div>
   );
 }

@@ -39,22 +39,22 @@ const SphereComp = () => {
       <ambientLight intensity={1} />
       <directionalLight ref={lightRef} position={[-100, 50, 50]} intensity={6} />
       <Sphere
-        position={[-70, -80, 10]}
+        position={[-60, -40, 10]}
         color={"#F2A772"}
         amplitude={0.02}
-        scale={1.4}
+        scale={1.1}
       />
       <Sphere
-        position={[80, -60, 10]}
+        position={[70, -25, 10]}
         color={"#C0918D"}
         amplitude={0.02}
-        scale={0.8}
+        scale={0.7}
       />
       <Sphere
-        position={[140, 50, 10]}
+        position={[110, 60, 10]}
         color={"#DDC3BF"}
         amplitude={0.02}
-        scale={0.5}
+        scale={0.45}
       />
     </>
   );
