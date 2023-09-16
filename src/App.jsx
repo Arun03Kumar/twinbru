@@ -57,7 +57,6 @@ function App() {
       // console.log(lastElapse)
       // console.log(elapsedTime)
       const frameNumber = Math.floor(elapsedTime) % images.length;
-      console.log(frameNumber);
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(images[frameNumber], 10, 80, 534, 534);
