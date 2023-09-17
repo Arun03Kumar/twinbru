@@ -13,7 +13,7 @@ const Partner = () => {
       {logoArr.map((item, i) => (
         <div className="partnerLogo">
           <img src={item} />
-        </div> 
+        </div>
       ))}
     </div>
   );

@@ -10,8 +10,15 @@ import Nav from "./components/Nav";
 import BottomNav from "./components/BottomNav";
 import HeroText from "./components/HeroText";
 import PartnerSection from "./components/PartnerSection/PartnerSection";
+import Ribbon from "./components/Ribbon/Ribbon";
 
 function App() {
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   const [lastFrameTime, setLastFrameTime] = useState(0);
   const circleCanvasRef = useRef(null);
   const images = [];
@@ -97,6 +104,7 @@ function App() {
       <BottomNav />
       <HeroText />
       <PartnerSection />
+      <Ribbon />
     </div>
   );
 }
