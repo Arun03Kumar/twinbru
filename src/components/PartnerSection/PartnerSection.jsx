@@ -4,7 +4,7 @@ import "remixicon/fonts/remixicon.css";
 import "./PartnerSection.css";
 import Partner from "./Partner";
 
-const PartnerSection = () => {
+const PartnerSection = ({ p1, p2, p3, partner }) => {
   const arrowRef = useRef(null);
   const handleHover = () => {
     gsap.to(arrowRef.current, {
@@ -23,17 +23,17 @@ const PartnerSection = () => {
   };
   return (
     <section className="partner">
-      <p>Twinbru & Partners</p>
-      <p>We set the industry standard for digital fabrics</p>
+      <p>{p1}</p>
+      <p>{p2}</p>
       <div
         className="linkHero"
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
       >
-        <p>Research Partners</p>
+        <p>{p3}</p>
         <i ref={arrowRef} class="ri-arrow-right-line"></i>
       </div>
-      <Partner />
+      {partner && <Partner />}
     </section>
   );
 };

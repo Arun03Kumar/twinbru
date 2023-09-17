@@ -103,8 +103,21 @@ function App() {
       <Nav />
       <BottomNav />
       <HeroText />
-      <PartnerSection />
+      <PartnerSection
+        p1="Twinbru & Partners"
+        p2="We set the industry standard for digital fabrics"
+        p3="Research Partners"
+        partner={true}
+      />
       <Ribbon />
+      <PartnerSection
+        p1="Explore the possibilities"
+        p2="Craft strong marketing content with
+our 3D fabric textures"
+        p3="View use cases
+"
+        partner={false}
+      />
     </div>
   );
 }

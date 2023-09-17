@@ -67,7 +67,7 @@ const Ribbon = () => {
         scrub: 0.15,
         trigger: `.partnerLogoContainer`,
         start: `top top`,
-        end: `300% top`,
+        end: `400% top`,
         // scroller: `.main`,
       },
       onUpdate: render,
@@ -80,7 +80,7 @@ const Ribbon = () => {
       scrub: 2,
       // scroller: `.ribbonContainer`,
       start: `top top`,
-      // end: `bottom top`,
+      end: `250% top`,
     });
     images[1].onload = render;
   }, []);
