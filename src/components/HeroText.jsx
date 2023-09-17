@@ -43,12 +43,12 @@ const HeroText = () => {
         process
       </p>
       <div
-        className="linkHero"
+        className="linkHero1"
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
       >
         <p>Browse 3D fabric textures</p>
-        <i ref={arrowRef} class="ri-arrow-right-line"></i>
+        <i ref={arrowRef} class="ri-arrow-right-line arr"></i>
       </div>
       <div className="scrollBar">
         <div ref={barRef} className="bar"></div>
