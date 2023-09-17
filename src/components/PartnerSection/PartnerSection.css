@@ -43,3 +43,7 @@
     max-height: 100%;
     object-fit: cover;
 }
+
+.linkHero {
+    z-index: 2;
+}

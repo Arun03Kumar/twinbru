@@ -3,7 +3,7 @@ import "remixicon/fonts/remixicon.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-const Nav = () => {
+const Nav = ({ setIsHovered }) => {
   const navigation = [
     "Platforms",
     "Partnerships",
@@ -50,7 +50,11 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className="leftNav">
+      <div
+        className="leftNav"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div style={{ background: "#C29A94", zIndex: 10 }}>
           <div className="logo">
             <div className="innerC"></div>
@@ -61,7 +65,13 @@ const Nav = () => {
       {isVisible && (
         <div className="centerNav">
           {navigation.map((item, i) => (
-            <p>{item}</p>
+            <p
+              className="navItem"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            >
+              {item}
+            </p>
           ))}
         </div>
       )}

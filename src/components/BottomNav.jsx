@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
-const BottomNav = () => {
+const BottomNav = ({ setIsHovered }) => {
   const colorArr = ["#dfb0a9", "#c8c7ff", "#c6e38b", "#fde391"];
   const [color, setColor] = useState("#dfb0a9");
   const [isOpen, setIsopen] = useState(false);
@@ -22,7 +22,11 @@ const BottomNav = () => {
   };
 
   return (
-    <div className="bottomNav">
+    <div
+      className="bottomNav"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* {isOpen ? (
         <div className="cir leftBottomNav">
           {colorArr.map((item, i) => (

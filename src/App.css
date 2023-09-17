@@ -9,6 +9,17 @@
   top: 10%;
 }
 
+.followCircle {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(255, 255, 255, 0.457);
+  border-radius: 50%;
+  position: fixed;
+  transform-origin: center center;
+  transition: left 0.2s linear, top 0.2s linear, transform 0.2s ease;
+  /* z-index: 2; */
+}
+
 svg {
   color: white;
 }
@@ -29,6 +40,8 @@ nav {
 .leftNav {
   display: flex;
   align-items: center;
+  cursor: pointer;
+  z-index: 1;
 }
 
 .leftNav>p {
@@ -58,6 +71,11 @@ nav {
 .centerNav {
   display: flex;
   gap: 60px;
+}
+
+.navItem {
+  padding: 10px;
+  cursor: pointer;
 }
 
 .bottomNav {

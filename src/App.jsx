@@ -13,6 +13,42 @@ import PartnerSection from "./components/PartnerSection/PartnerSection";
 import Ribbon from "./components/Ribbon/Ribbon";
 
 function App() {
+  const followCircleRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseMove = (e) => {
+    // console.log(e.clientX)
+    const cursor = document.querySelector(".followCircle");
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    //   followCircleRef.current.style.left = e.clientX + 'px'
+    //   followCircleRef.current.style.top = e.clientY + 'px'
+  };
+  function throttle(callback, delay) {
+    let lastTime = 0;
+    return function (event) {
+      const currentTime = Date.now();
+      if (currentTime - lastTime >= delay) {
+        callback(event);
+        lastTime = currentTime;
+      }
+    };
+  }
+  const handleMouseMoveThrottled = throttle((e) => {
+    const cursor = document.querySelector(".followCircle");
+
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  }, 16);
+  useEffect(() => {
+    console.log(followCircleRef.current.getBoundingClientRect());
+    const main = document.querySelector(".main");
+    // main.addEventListener('mousemove', handleMouseMove)
+    main.addEventListener("mousemove", handleMouseMoveThrottled);
+    return () => {
+      // main.removeEventListener('mousemove', handleMouseMove)
+      main.removeEventListener("mousemove", handleMouseMoveThrottled);
+    };
+  });
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
@@ -80,45 +116,54 @@ function App() {
     };
   }, []);
   return (
-    <div className="main">
-      <div style={{ width: "100vw", height: "130vh" }}>
-        <Canvas
-          // shadowMap
-          camera={{
-            position: [0, 0, 300],
-            fov: 35,
-            near: 0.1,
-            far: 1000,
-          }}
-        >
-          <SphereComp />
-        </Canvas>
-      </div>
-      <canvas
-        ref={circleCanvasRef}
-        id="circleAnimation"
-        width={654}
-        height={654}
-      ></canvas>
-      <Nav />
-      <BottomNav />
-      <HeroText />
-      <PartnerSection
-        p1="Twinbru & Partners"
-        p2="We set the industry standard for digital fabrics"
-        p3="Research Partners"
-        partner={true}
-      />
-      <Ribbon />
-      <PartnerSection
-        p1="Explore the possibilities"
-        p2="Craft strong marketing content with
+    <>
+      <div className="main">
+        <div
+          ref={followCircleRef}
+          className="followCircle"
+          style={{ transform: isHovered ? "scale(2)" : "" }}
+        />
+
+        <div style={{ width: "100vw", height: "130vh" }}>
+          <Canvas
+            // shadowMap
+            camera={{
+              position: [0, 0, 300],
+              fov: 35,
+              near: 0.1,
+              far: 1000,
+            }}
+          >
+            <SphereComp />
+          </Canvas>
+        </div>
+        <canvas
+          ref={circleCanvasRef}
+          id="circleAnimation"
+          width={654}
+          height={654}
+        ></canvas>
+        <Nav setIsHovered={setIsHovered} />
+        <BottomNav setIsHovered={setIsHovered} />
+        <HeroText />
+        <PartnerSection
+          p1="Twinbru & Partners"
+          p2="We set the industry standard for digital fabrics"
+          p3="Research Partners"
+          partner={true}
+          setIsHovered={setIsHovered}
+        />
+        <Ribbon />
+        <PartnerSection
+          p1="Explore the possibilities"
+          p2="Craft strong marketing content with
 our 3D fabric textures"
-        p3="View use cases
+          p3="View use cases
 "
-        partner={false}
-      />
-    </div>
+          partner={false}
+        />
+      </div>
+    </>
   );
 }
 

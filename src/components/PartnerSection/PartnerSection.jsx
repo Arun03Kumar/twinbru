@@ -4,9 +4,10 @@ import "remixicon/fonts/remixicon.css";
 import "./PartnerSection.css";
 import Partner from "./Partner";
 
-const PartnerSection = ({ p1, p2, p3, partner }) => {
+const PartnerSection = ({ p1, p2, p3, partner, setIsHovered }) => {
   const arrowRef = useRef(null);
   const handleHover = () => {
+    setIsHovered(true);
     gsap.to(arrowRef.current, {
       x: 10,
       duration: 0.3,
@@ -15,6 +16,7 @@ const PartnerSection = ({ p1, p2, p3, partner }) => {
   };
 
   const handleMouseLeave = () => {
+    setIsHovered(false);
     gsap.to(arrowRef.current, {
       x: 0,
       duration: 0.3,
